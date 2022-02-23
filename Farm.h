@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
+#include <queue>
 
 using namespace std;
 
@@ -19,6 +20,7 @@ class Farm
         vector<Land> barrenLands;
 
         void UpdateLandMatrix();
+        int BFSHelper(int y, int x);
 
     public:
         Farm();
