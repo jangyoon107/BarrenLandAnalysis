@@ -1,7 +1,7 @@
 # BarrenLandAnalysis
 Target Case Study 
 
-**Requirements:**
+### **Requirements:**
 - Complete the exercise in the technical stack of your choice.
     - When appropriate use a data store of your choice.
     - Use any external frameworks you desire
@@ -17,7 +17,7 @@ Target Case Study
     - Rename .js files to .js.txt if emailing code
     - Provide a README.md file with instructions for testing, running and interacting with your application and any details you feel are relevant to share
 
-**Problem:**
+### **Problem:**
 You have a farm of 400m by 600m where coordinates of the field are from (0, 0) to (399, 599). A portion of the farm is barren, and all the barren land is in the form of rectangles. Due to these rectangles of barren land, the remaining area of fertile land is in no particular shape. An area of fertile land is defined as the largest area of land that is not covered by any of the rectangles of barren land. 
 Read input from STDIN. Print output to STDOUT 
 
@@ -26,16 +26,17 @@ You are given a set of rectangles that contain the barren land. These rectangles
 
 - Output 
 Output all the fertile land area in square meters, sorted from smallest area to greatest, separated by a space. 
+
 Sample: 
 {“0 292 399 307”} => 116800  116800
 {“48 192 351 207”, “48 392 351 407”, “120 52 135 547”, “260 52 275 547”}  => 22816 192608
 
-**How to build:**
+### **How to build:**
 1. Open cloned folder in command prompt.
-2. Run make to build executables
-3. Run BarrenLandAnalysis.exe with desired input parameters
+2. Run **make** to build executables
+3. Run **BarrenLandAnalysis** with desired input parameters
 
-**How to use:**
+### **How to use:**
 - BarrenLandAnalysis.exe
     -w : custom width setter; must have valid number after
     -h : custom height setter; must have valid number after
