@@ -3,7 +3,7 @@ CFLAGS = -g -Wall
 
 
 all: main.o Farm.o Land.o
-	$(CC) $(CFLAGS) -o main main.o Farm.o Land.o
+	$(CC) $(CFLAGS) -o BarrenLandAnalysis main.o Farm.o Land.o
 
 main.o: main.cpp Farm.h Point.h
 	$(CC) $(CFLAGS) -c main.cpp

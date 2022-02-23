@@ -42,17 +42,18 @@ int main(int argc, char* argv[]) {
 
         int newWidth, newHeight;
 
-        int index = 0;
+        int index = 1;
         while(index < argc)
         {
             char *argi = argv[index];
+
             if (strcmp(argi, w) == 0 && (index + 1) < argc)
             {
-                newWidth = atoi(argi);
+                newWidth = atoi(argv[++index]);
             }
             else if (strcmp(argi, h) == 0 && (index + 1) < argc)
             {
-                newHeight = atoi(argi);
+                newHeight = atoi(argv[++index]);
             }
             else
             {
@@ -68,9 +69,6 @@ int main(int argc, char* argv[]) {
             }
             index++;
         }
-
-        cout<<"width: "<<newWidth<<endl;
-        cout<<"height: "<<newHeight<<endl;
 
         farm.SetWidthHeight(newWidth, newHeight);
         farm.SetBarrenAreas(barrenLandInputs);
