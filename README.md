@@ -29,6 +29,7 @@ Output all the fertile land area in square meters, sorted from smallest area to 
 
 Sample: 
 {“0 292 399 307”} => 116800  116800
+
 {“48 192 351 207”, “48 392 351 407”, “120 52 135 547”, “260 52 275 547”}  => 22816 192608
 
 ### **How to build:**
@@ -38,6 +39,9 @@ Sample:
 
 ### **How to use:**
 - BarrenLandAnalysis.exe
+
     -w : custom width setter; must have valid number after
+
     -h : custom height setter; must have valid number after
+    
     -runtest : perform all test cases defined in Tests/test_main.cpp; will ignore any other parameters
