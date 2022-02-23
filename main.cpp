@@ -1,4 +1,5 @@
 #include "Farm.h"
+#include "./Tests/test_main.h"
 
 #include <iostream>
 #include <stdio.h>
@@ -20,9 +21,9 @@ int main(int argc, char* argv[]) {
     Farm farm;
 
 
-    // custom size for testing
     char w[] = "-w";
     char h[] = "-h";
+    char runTest[] = "-runtest";
 
     int newWidth, newHeight;
     bool customInputFlag = false;
@@ -32,6 +33,11 @@ int main(int argc, char* argv[]) {
     {
         char* argi = argv[index];
 
+        if(strcmp(argi, runTest) == 0)
+        {
+            run_main_test();
+            exit(0);
+        }
         if (strcmp(argi, w) == 0 && (index + 1) < argc)
         {
             newWidth = atoi(argv[++index]);

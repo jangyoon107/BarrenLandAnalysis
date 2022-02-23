@@ -15,10 +15,10 @@ class Land
         Land(int bottomLeftX, int bottomLeftY, int topRightX, int topRightY);
         ~Land();
 
-        bool IsValid();
+        bool IsValid() const;
 
-        int GetWidth();
-        int GetHeight();
+        int GetWidth() const;
+        int GetHeight() const;
 
         Point GetUpperLeft() const;
         Point GetUpperRight() const;

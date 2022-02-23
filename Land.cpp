@@ -25,17 +25,17 @@ Land::Land(int bottomLeftX, int bottomLeftY, int topRightX, int topRightY)
         validLand = false;    
 }
 
-bool Land::IsValid()
+bool Land::IsValid() const
 {
     return validLand;
 }
 
-int Land::GetWidth()
+int Land::GetWidth() const
 {
     return width;
 }
 
-int Land::GetHeight()
+int Land::GetHeight() const
 {
     return height;
 }
