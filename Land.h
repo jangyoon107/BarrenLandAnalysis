@@ -20,10 +20,10 @@ class Land
         int GetWidth();
         int GetHeight();
 
-        Point GetUpperLeft();
-        Point GetUpperRight();
-        Point GetBottomLeft();
-        Point GetBottomRight();
+        Point GetUpperLeft() const;
+        Point GetUpperRight() const;
+        Point GetBottomLeft() const;
+        Point GetBottomRight() const;
 };
 
 #endif // LAND_H

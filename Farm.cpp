@@ -28,7 +28,7 @@ void Farm::SetWidthHeight(int w, int h)
 void Farm::SetBarrenAreas(vector<string> barrenString)
 {
     vector<int> coordinates;
-    for (int i = 0; i < barrenString.size(); i++)
+    for (size_t i = 0; i < barrenString.size(); i++)
     {
         istringstream iss(barrenString[i]);
 
@@ -57,7 +57,7 @@ void Farm::SetBarrenAreas(vector<string> barrenString)
 
 void Farm::UpdateLandMatrix()
 {
-    for (int i = 0; i < barrenLands.size(); i++)
+    for (size_t i = 0; i < barrenLands.size(); i++)
     {
         Land land = barrenLands[i];
 

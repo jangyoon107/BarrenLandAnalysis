@@ -40,22 +40,22 @@ int Land::GetHeight()
     return height;
 }
 
-Point Land::GetUpperLeft()
+Point Land::GetUpperLeft() const
 {
     return upperLeft;
 }
 
-Point Land::GetUpperRight()
+Point Land::GetUpperRight() const
 {
     return upperRight;
 }
 
-Point Land::GetBottomLeft()
+Point Land::GetBottomLeft() const
 {
     return bottomLeft;
 }
 
-Point Land::GetBottomRight()
+Point Land::GetBottomRight() const
 {
     return bottomRight;
 }
