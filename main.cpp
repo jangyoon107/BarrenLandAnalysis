@@ -69,9 +69,11 @@ int main(int argc, char* argv[]) {
     if (customInputFlag)
         farm.SetWidthHeight(newWidth, newHeight);
 
-    farm.SetBarrenAreas(barrenLandInputs);
-    farm.DisplayFarm();
+    bool success = farm.SetBarrenAreas(barrenLandInputs);
+    if(!success)
+        return 0;
 
+    farm.DisplayFarm();
 
     vector<int> result = farm.CalculateFertileLand();
 

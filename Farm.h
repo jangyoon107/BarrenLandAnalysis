@@ -43,7 +43,7 @@ class Farm
         void SetWidthHeight(int w, int h);
 
         // Setter for barrenland (conversion from string to land object)
-        void SetBarrenAreas(vector<string> barrenString);
+        bool SetBarrenAreas(vector<string> barrenString);
                 
         // Perform Graph search to identify all fertile land sizes
         vector<int> CalculateFertileLand();

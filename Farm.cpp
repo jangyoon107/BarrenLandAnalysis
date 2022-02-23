@@ -31,7 +31,7 @@ void Farm::SetWidthHeight(int w, int h)
     landVisited.resize(landHeight, vector<int>(landWidth, 0));
 }
 
-void Farm::SetBarrenAreas(vector<string> barrenString)
+bool Farm::SetBarrenAreas(vector<string> barrenString)
 {
     vector<int> coordinates;
     for (size_t i = 0; i < barrenString.size(); i++)
@@ -47,7 +47,7 @@ void Farm::SetBarrenAreas(vector<string> barrenString)
 
         if(coordinates.size() != 4)
         {
-            cout<<"Invalid format of coodinates, " <<coordinates.size() << "of numbers found on a input... Excluding from the barren list."<<endl;
+            cout<<"Invalid format of coodinates, " <<coordinates.size() << " of numbers found on a input... Excluding from the barren list."<<endl;
             coordinates.clear();
             continue;
         }
@@ -63,11 +63,15 @@ void Farm::SetBarrenAreas(vector<string> barrenString)
     }
 
     if (barrenLands.size() > 0)
+    {
         UpdateLandMatrix();
+        return true;
+    }
     else
     {
         cout<<"Insufficient number of barren inputs.. Unable to contine. Exiting..."<<endl;
-        exit(0);
+        //exit(EXIT_FAILURE);
+        return false;
     }
 }
 
@@ -81,8 +85,9 @@ void Farm::UpdateLandMatrix()
         {
             for (int x = land.GetBottomLeft().x; x < land.GetBottomLeft().x + land.GetWidth(); x++)
             {
-                if(y < landHeight && x < landWidth)
-                    landVisited[y][x] = -1;
+                int convY = abs(y - landHeight + 1);
+                if(convY < landHeight && x < landWidth)
+                    landVisited[convY][x] = -1;
             }
         }
     }
