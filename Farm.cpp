@@ -65,8 +65,7 @@ void Farm::UpdateLandMatrix()
         {
             for (int x = land.GetBottomLeft().x; x < land.GetBottomLeft().x + land.GetWidth(); x++)
             {
-                int convY = abs(y - landHeight + 1);
-                landVisited[convY][x] = -1;
+                landVisited[y][x] = -1;
             }
         }
     }
