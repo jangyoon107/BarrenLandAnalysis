@@ -15,8 +15,10 @@ class Farm
     private:
         int landWidth, landHeight;
         
-        vector<Land> barrenArea;
+        vector<vector<int>> landVisited;
+        vector<Land> barrenLands;
 
+        void UpdateLandMatrix();
 
     public:
         Farm();
@@ -25,8 +27,11 @@ class Farm
         void SetWidthHeight(int w, int h);
 
         void SetBarrenAreas(vector<string> barrenString);
+
+        
         vector<int> CalculateFertileLand();
 
+        void DisplayFarm();
 
 };
 

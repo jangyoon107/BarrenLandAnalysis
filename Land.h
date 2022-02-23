@@ -7,9 +7,18 @@ class Land
 {
     private:
         Point upperLeft, upperRight, bottomLeft, bottomRight;
+        bool validLand;
+        int width, height;
+
+
     public:
         Land(int bottomLeftX, int bottomLeftY, int topRightX, int topRightY);
         ~Land();
+
+        bool IsValid();
+
+        int GetWidth();
+        int GetHeight();
 
         Point GetUpperLeft();
         Point GetUpperRight();

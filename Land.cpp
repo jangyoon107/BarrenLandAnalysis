@@ -2,17 +2,42 @@
 
 Land::Land(int bottomLeftX, int bottomLeftY, int topRightX, int topRightY)
 {
-    bottomLeft.x = bottomLeftX;
-    bottomLeft.y = bottomLeftY;
+    if(bottomLeftX <= topRightX && bottomLeftX >= 0 && bottomLeftY <= topRightY && bottomLeftY >= 0)
+    {
+        validLand = true;
 
-    upperRight.x = topRightX;
-    upperRight.y = topRightY;
+        bottomLeft.x = bottomLeftX;
+        bottomLeft.y = bottomLeftY;
 
-    upperLeft.x = bottomLeftX;
-    upperLeft.y = topRightY;
+        upperRight.x = topRightX;
+        upperRight.y = topRightY;
 
-    bottomRight.x = topRightX;
-    bottomRight.y = bottomLeftY;
+        upperLeft.x = bottomLeftX;
+        upperLeft.y = topRightY;
+
+        bottomRight.x = topRightX;
+        bottomRight.y = bottomLeftY;
+
+        width = bottomRight.x - bottomLeft.x + 1;
+        height = upperLeft.y - bottomLeft.y + 1;
+    }
+    else
+        validLand = false;    
+}
+
+bool Land::IsValid()
+{
+    return validLand;
+}
+
+int Land::GetWidth()
+{
+    return width;
+}
+
+int Land::GetHeight()
+{
+    return height;
 }
 
 Point Land::GetUpperLeft()
