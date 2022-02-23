@@ -11,6 +11,9 @@ Farm::Farm()
 
 Farm::Farm(int w, int h)
 {
+    assert(("Width must be positive", w >= 0));
+    assert(("Height must be positive", h >= 0));
+
     landWidth = w;
     landHeight = h;
 
@@ -19,6 +22,9 @@ Farm::Farm(int w, int h)
 
 void Farm::SetWidthHeight(int w, int h)
 {
+    assert(("Width must be positive", w >= 0));
+    assert(("Height must be positive", h >= 0));
+
     landWidth = w;
     landHeight = h;
 
@@ -39,20 +45,30 @@ void Farm::SetBarrenAreas(vector<string> barrenString)
             coordinates.push_back(number);
         }
 
-        if(coordinates.size() > 4)
+        if(coordinates.size() != 4)
         {
-            // do error checking
+            cout<<"Invalid format of coodinates, " <<coordinates.size() << "of numbers found on a input... Excluding from the barren list."<<endl;
+            coordinates.clear();
+            continue;
         }
-
         
         Land land(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
         if(land.IsValid())
             barrenLands.push_back(land);
+        else{
+            cout<<"Invalid Barren Coordinates received... Excluding it from the barren list."<<endl;
+        }
         
         coordinates.clear();
     }
 
-    UpdateLandMatrix();
+    if (barrenLands.size() > 0)
+        UpdateLandMatrix();
+    else
+    {
+        cout<<"Insufficient number of barren inputs.. Unable to contine. Exiting..."<<endl;
+        exit(0);
+    }
 }
 
 void Farm::UpdateLandMatrix()
@@ -65,7 +81,8 @@ void Farm::UpdateLandMatrix()
         {
             for (int x = land.GetBottomLeft().x; x < land.GetBottomLeft().x + land.GetWidth(); x++)
             {
-                landVisited[y][x] = -1;
+                if(y < landHeight && x < landWidth)
+                    landVisited[y][x] = -1;
             }
         }
     }
@@ -92,10 +109,15 @@ void Farm::DisplayFarm()
     cout<<endl;
 }
 
+/* Algorith summary: 
+ * To calculate the fertile land, we will go through each coordinate of the farm and check if we have visited before.
+ * If we havent visited, then we will start BFS search and visit all positions reachable from current location.
+ * Once propagation is done, we have found one plot of land that is fertile. Add to vector and move to next location we havent visited. 
+ */
 vector<int> Farm::CalculateFertileLand()
 {
     vector<int> areas;
-    
+  
     for (int y = 0; y < landHeight; y++)
     {
         for (int x = 0; x < landWidth; x++)
@@ -114,7 +136,10 @@ vector<int> Farm::CalculateFertileLand()
     return areas;
 }
 
-
+/* Algorith summary:
+ * Standary BFS algorithm with queue. Adds 1 to area every time it finds unvisited fertile land. 
+ * Keep propagating to left, right, up, down lands until all nodes are visited or barren.
+ */
 int Farm::BFSHelper(int y, int x)
 {
     int area = 0;

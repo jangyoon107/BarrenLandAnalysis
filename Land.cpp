@@ -59,5 +59,3 @@ Point Land::GetBottomRight() const
 {
     return bottomRight;
 }
-
-Land::~Land(){}

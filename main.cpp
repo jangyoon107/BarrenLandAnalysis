@@ -20,12 +20,16 @@ int main(int argc, char* argv[]) {
     vector<string> barrenLandInputs;
     Farm farm;
 
-
+    /* parameter check: 
+     *  -w: this flag is used to specify custom width of the farm (for custom testing)
+     *  -h: this flag is used to specify custom height of the farm (for custom testing)
+     *  -runtest: this flag will run tests defined by me. Will ignore all other inputs
+     */
     char w[] = "-w";
     char h[] = "-h";
     char runTest[] = "-runtest";
 
-    int newWidth, newHeight;
+    int newWidth  = 400, newHeight = 600;
     bool customInputFlag = false;
 
     int index = 1;
