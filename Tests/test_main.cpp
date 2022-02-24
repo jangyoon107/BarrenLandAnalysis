@@ -31,43 +31,48 @@ void run_main_test()
     run_farm_with_input("0 2 9 5", 10, 10, "20 40");
     cout<<endl;
 
-     // Small test case : negative barren land
+    // Small test case : zero land
     cout<<"Test 4: "<<endl;
+    run_farm_with_input("1 1 3 3", 0, 0, "0");
+    cout<<endl;
+
+     // Small test case : negative barren land
+    cout<<"Test 5: "<<endl;
     run_farm_with_input("-1 0 1 1, 4 4 9 9", 10, 10, "Invalid Barren Coordinates received... Excluding it from the barren list.\n64");
     cout<<endl;
 
      // Small test case : barren land extending to outside farm
-    cout<<"Test 5: "<<endl;
+    cout<<"Test 6: "<<endl;
     run_farm_with_input("0 5 12 12", 10, 10, "50");
     cout<<endl;
 
     // Small test case: isolated land in middle
-    cout<<"Test 6: "<<endl;
+    cout<<"Test 7: "<<endl;
     run_farm_with_input("1 1 2 4, 2 0 5 1, 2 4 5 5, 5 1 6 4", 10, 10, "4 68");
     cout<<endl;
 
     // Big test case: barren isolating three lands but barren intruding one land
-    cout<<"Test 7: "<<endl;
+    cout<<"Test 8: "<<endl;
     run_farm_with_input("0 292 399 307, 292 0 307 399", 400, 600, "26864 85264 115328");
     cout<<endl;
 
     // Big test case: barren completely seperating land into four
-    cout<<"Test 8: "<<endl;
+    cout<<"Test 9: "<<endl;
     run_farm_with_input("0 292 399 307, 195 0 205 599", 400, 600, "56648 56648 56940 56940");
     cout<<endl;
 
     // Big test case: only one barren cell
-    cout<<"Test 9: "<<endl;
+    cout<<"Test 10: "<<endl;
     run_farm_with_input("0 0 1 1", 400, 600, "239996");
     cout<<endl;
 
     // Big test case: no fertile land
-    cout<<"Test 10: "<<endl;
+    cout<<"Test 11: "<<endl;
     run_farm_with_input("0 0 399 599", 400, 600, "0");
     cout<<endl;
 
     // Big test case: barren surrounding fertile
-    cout<<"Test 11: "<<endl;
+    cout<<"Test 12: "<<endl;
     run_farm_with_input("0 0 1 599, 0 0 399 1, 0 598 399 599, 398 0 399 599", 400, 600, "236016");
     cout<<endl;
 }
