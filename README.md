@@ -38,10 +38,12 @@ Sample:
 3. Run **BarrenLandAnalysis** with desired input parameters
 
 ### **How to use:**
-- BarrenLandAnalysis.exe
+- BarrenLandAnalysis
 
     -w : custom width setter; must have valid number after
 
     -h : custom height setter; must have valid number after
     
     -runtest : perform all test cases defined in Tests/test_main.cpp; will ignore any other parameters
+
+- Example: ./BarrenLandAnalysis -w 20 -h 20 "1 1 4 4" or ./BarrenLandAnalysis -runtest
