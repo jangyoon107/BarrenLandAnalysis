@@ -136,7 +136,14 @@ vector<int> Farm::CalculateFertileLand()
         
     }
 
-    sort(areas.begin(), areas.end());
+    if(areas.size() > 0)
+    {
+        sort(areas.begin(), areas.end());
+    }
+    else
+    {
+        areas.push_back(0);
+    }
 
     return areas;
 }
