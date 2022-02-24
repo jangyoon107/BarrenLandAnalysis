@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
     /* parameter check: 
      *  -w: this flag is used to specify custom width of the farm (for custom testing)
      *  -h: this flag is used to specify custom height of the farm (for custom testing)
-     *  -runtest: this flag will run tests defined by me. Will ignore all other inputs
+     *  -runtest: this flag will run tests defined in Test/test_main.cpp
      */
     char w[] = "-w";
     char h[] = "-h";
