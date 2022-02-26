@@ -69,6 +69,9 @@ int main(int argc, char* argv[]) {
     if (customInputFlag)
         farm.SetWidthHeight(newWidth, newHeight);
 
+    if (!farm.IsValid())
+        return 0;
+
     bool success = farm.SetBarrenAreas(barrenLandInputs);
     if(!success)
         return 0;

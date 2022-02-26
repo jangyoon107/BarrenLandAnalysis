@@ -5,25 +5,49 @@ Farm::Farm()
 {
     landWidth = 400;
     landHeight = 600;
+    validFarmFlag = true;
 
     landVisited.resize(landHeight, vector<int>(landWidth, 0));
 }
 
 Farm::Farm(int w, int h)
 {
-    assert(("Width must be positive", w >= 0));
-    assert(("Height must be positive", h >= 0));
+    if(w < 1)
+    {
+        cout<<"Initialization error, Width must be bigger than 0"<<endl;
+        validFarmFlag = false;
+        return;
+    }
 
+    if(h < 1)
+    {
+        cout<<"Initialization error, Height must be bigger than 0"<<endl;
+        validFarmFlag = false;
+        return;
+    }
+    
     landWidth = w;
     landHeight = h;
+    validFarmFlag = true;
 
     landVisited.resize(landHeight, vector<int>(landWidth, 0));
 }
 
 void Farm::SetWidthHeight(int w, int h)
 {
-    assert(("Width must be positive", w >= 0));
-    assert(("Height must be positive", h >= 0));
+    if(w < 1)
+    {
+        cout<<"Initialization error, Width must be bigger than 0"<<endl;
+        validFarmFlag = false;
+        return;
+    }
+
+    if(h < 1)
+    {
+        cout<<"Initialization error, Height must be bigger than 0"<<endl;
+        validFarmFlag = false;
+        return;
+    }
 
     landWidth = w;
     landHeight = h;
@@ -55,7 +79,8 @@ bool Farm::SetBarrenAreas(vector<string> barrenString)
         Land land(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
         if(land.IsValid())
             barrenLands.push_back(land);
-        else{
+        else
+        {
             cout<<"Invalid Barren Coordinates received... Excluding it from the barren list."<<endl;
         }
         
@@ -112,6 +137,11 @@ void Farm::DisplayFarm()
         cout<<endl;
     }
     cout<<endl;
+}
+
+bool Farm::IsValid()
+{
+    return validFarmFlag;
 }
 
 /* Algorith summary: 

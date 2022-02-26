@@ -3,7 +3,6 @@
 
 #include "Land.h"
 
-#include <cassert>
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -34,6 +33,9 @@ class Farm
         // Helper function for propagating BFS
         int BFSHelper(int y, int x);
 
+        // Flag for validity of farm size
+        bool validFarmFlag;
+
     public:
         // Constructors
         Farm();
@@ -50,6 +52,9 @@ class Farm
 
         // Simple display function for debugging. Only for small test cases
         void DisplayFarm();
+
+        // Getter for validity flag for farm
+        bool IsValid();
 
         // Destructor
         ~Farm(){};
