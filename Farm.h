@@ -30,8 +30,8 @@ class Farm
         // Given all barrenLand inputs, update landVisited matrix to reflect barren lands
         void UpdateLandMatrix();
 
-        // Helper function for propagating BFS
-        int BFSHelper(int y, int x);
+        // Function for traversing graph (BFS based) and identifying area of connected fertile land
+        int AreaDetectorBFS(int y, int x);
 
         // Flag for validity of farm size
         bool validFarmFlag;

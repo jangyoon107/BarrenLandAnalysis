@@ -124,7 +124,7 @@ void Farm::DisplayFarm()
     if(landWidth > 20 && landHeight > 20)
         return;
 
-    cout<<"Land:"<<endl;
+    cout<<"Farm:"<<endl;
     for (int y = 0; y < landHeight; y++)
     {
         for (int x = 0; x < landWidth; x++)
@@ -159,7 +159,7 @@ vector<int> Farm::CalculateFertileLand()
         {
             if(landVisited[y][x] == 0)
             {
-                int area = BFSHelper(y, x);
+                int area = AreaDetectorBFS(y, x);
                 areas.push_back(area);
             }
         }
@@ -182,7 +182,7 @@ vector<int> Farm::CalculateFertileLand()
  * Standard BFS algorithm with queue. Adds 1 to area every time it finds unvisited fertile land. 
  * Keep propagating to left, right, up, down lands until all connected nodes are visited.
  */
-int Farm::BFSHelper(int y, int x)
+int Farm::AreaDetectorBFS(int y, int x)
 {
     int area = 0;
 
