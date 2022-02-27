@@ -48,5 +48,5 @@ Sample:
 
 - Example: ./BarrenLandAnalysis -w 20 -h 20 "1 1 4 4" or ./BarrenLandAnalysis -runtest
 
-### ** External Library Used: **
+### **External Library Used:**
 - Acutest: C/C++ unit testing library (https://github.com/mity/acutest)
