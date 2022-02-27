@@ -27,14 +27,18 @@ class Farm
         // vector storing all barren land inputs
         vector<Land> barrenLands;
 
+        // Flag for validity of farm size
+        bool validFarmFlag;
+
         // Given all barrenLand inputs, update landVisited matrix to reflect barren lands
         void UpdateLandMatrix();
 
         // Function for traversing graph (BFS based) and identifying area of connected fertile land
         int AreaDetectorBFS(int y, int x);
 
-        // Flag for validity of farm size
-        bool validFarmFlag;
+        // Reset Land matrix after calculating fertile land size
+        void ResetLandMatrix();
+
 
     public:
         // Constructors
@@ -45,7 +49,7 @@ class Farm
         void SetWidthHeight(int w, int h);
 
         // Setter for barrenland (conversion from string to land object)
-        bool SetBarrenAreas(vector<string> barrenString);
+        void SetBarrenAreas(vector<string> barrenString);
                 
         // Perform Graph search to identify all fertile land
         vector<int> CalculateFertileLand();

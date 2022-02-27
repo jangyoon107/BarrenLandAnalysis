@@ -3,6 +3,11 @@
 
 #include "Point.h"
 
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
 /*
  * Class: Land
  * Description: This class converts bottom left coordinate numbers and top right coordinate numbers to full coodinates of all four corners.
@@ -22,7 +27,7 @@ class Land
 
     public:
         // Constructor & destructor
-        Land(int bottomLeftX, int bottomLeftY, int topRightX, int topRightY);
+        Land(vector<int>);
         ~Land(){};
 
         // Getter for validity of the land

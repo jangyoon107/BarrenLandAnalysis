@@ -18,12 +18,12 @@ void run_main_test()
 
     // Testing Invalid format within the inputs
     cout<<"Test 1: "<<endl;
-    run_farm_with_input("48 192 351 207 48 392 351 407, 120 52 135 547, 260 52 275 547", 400, 600, "Invalid format of coodinates, 8 of numbers found on a input... Excluding from the barren list.\n224128");
+    run_farm_with_input("48 192 351 207 48 392 351 407, 120 52 135 547, 260 52 275 547", 400, 600, "Invalid format of coodinates, 8 numbers found on a input... Excluding from the barren list.\n224128");
     cout<<endl;
 
-    // Testing invalid coordinate
+    // Testing invalid coordinate only
     cout<<"Test 2: "<<endl;
-    run_farm_with_input("48 192 351 207 48", 400, 600, "Invalid format of coodinates, 5 of numbers found on a input... Excluding from the barren list.\nInsufficient number of barren inputs.. Unable to contine. Exiting...\n");
+    run_farm_with_input("48 192 351 207 48", 400, 600, "Invalid format of coodinates, 5 numbers found on a input... Excluding from the barren list.\n240000");
     cout<<endl;
 
     // Small test case
@@ -33,7 +33,7 @@ void run_main_test()
 
     // Small test case : zero land
     cout<<"Test 4: "<<endl;
-    run_farm_with_input("1 1 3 3", 0, 0, "Initialization error, Width must be bigger than 0\n");
+    run_farm_with_input("1 1 3 3", 0, 0, "Initialization error, Width Height must be bigger than 0\n");
     cout<<endl;
 
     // Small test case : negative land
@@ -103,17 +103,15 @@ void run_farm_with_input(string coordinates, int width, int height, string expec
             barrenLandInputs.push_back(argStr);
         }
 
-        bool success = farm.SetBarrenAreas(barrenLandInputs);
-        if(success)
-        {
-            vector<int> result = farm.CalculateFertileLand();
+        farm.SetBarrenAreas(barrenLandInputs);
 
-            for (size_t i = 0; i < result.size() - 1; i++)
-            {
-                cout<<result[i]<<" ";
-            }
-            cout<<result[result.size() - 1];
+        vector<int> result = farm.CalculateFertileLand();
+
+        for (size_t i = 0; i < result.size() - 1; i++)
+        {
+            cout<<result[i]<<" ";
         }
+        cout<<result[result.size() - 1];
     }
     // END:   Code being tested
 
@@ -122,7 +120,7 @@ void run_farm_with_input(string coordinates, int width, int height, string expec
 
     cout.rdbuf(prevcoutbuf);
 
-    cout<<"Input: "<<coordinates<<endl;
+    cout<<"Input: "<<coordinates<<" -w "<<width<<" -h "<<height<<endl;
     cout<<"Expected output: "<<expected<<endl;
     cout<<"Test output: "<<outputs<<endl;
     cout<<(test_result == 0 ? " Passed" : " Failed")<<endl; 
