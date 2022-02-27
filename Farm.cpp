@@ -139,7 +139,7 @@ void Farm::DisplayFarm()
     cout<<endl;
 }
 
-bool Farm::IsValid()
+bool Farm::IsValid() const
 {
     return validFarmFlag;
 }
@@ -179,8 +179,8 @@ vector<int> Farm::CalculateFertileLand()
 }
 
 /* Algorith summary:
- * Standary BFS algorithm with queue. Adds 1 to area every time it finds unvisited fertile land. 
- * Keep propagating to left, right, up, down lands until all nodes are visited or barren.
+ * Standard BFS algorithm with queue. Adds 1 to area every time it finds unvisited fertile land. 
+ * Keep propagating to left, right, up, down lands until all connected nodes are visited.
  */
 int Farm::BFSHelper(int y, int x)
 {

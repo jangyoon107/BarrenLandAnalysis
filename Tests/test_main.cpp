@@ -84,7 +84,7 @@ void run_main_test()
 
 void run_farm_with_input(string coordinates, int width, int height, string expected)
 {
-    // Redirect std::cout to buffer for testing
+    // Redirect cout to buffer for testing
     stringstream buffer;
     streambuf* prevcoutbuf = cout.rdbuf(buffer.rdbuf());
 

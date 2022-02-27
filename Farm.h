@@ -47,14 +47,14 @@ class Farm
         // Setter for barrenland (conversion from string to land object)
         bool SetBarrenAreas(vector<string> barrenString);
                 
-        // Perform Graph search to identify all fertile land sizes
+        // Perform Graph search to identify all fertile land
         vector<int> CalculateFertileLand();
 
         // Simple display function for debugging. Only for small test cases
         void DisplayFarm();
 
         // Getter for validity flag for farm
-        bool IsValid();
+        bool IsValid() const;
 
         // Destructor
         ~Farm(){};
