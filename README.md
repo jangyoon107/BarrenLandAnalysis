@@ -36,6 +36,7 @@ Sample:
 1. Open cloned folder in command prompt.
 2. Run **make** to build executables
 3. Run **BarrenLandAnalysis** with desired input parameters
+4. Run **test_unit** for unit test
 
 ### **How to use:**
 - BarrenLandAnalysis
