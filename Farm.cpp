@@ -242,12 +242,12 @@ int Farm::AreaDetectorBFS(int y, int x)
             area++;
 
             // Propagate to left, right, up, down and add to queue
-            if(coord.x - 1 >= 0 && coord.x - 1 < landWidth)
+            if(coord.x - 1 >= 0)
                 queuePoint.push(Point{coord.x - 1, coord.y});
             if(coord.x + 1 < landWidth)
                 queuePoint.push(Point{coord.x + 1, coord.y});
 
-            if(coord.y - 1 >= 0 && coord.y - 1 < landHeight)
+            if(coord.y - 1 >= 0)
                 queuePoint.push(Point{coord.x, coord.y - 1});
             if(coord.y + 1 < landHeight)
                 queuePoint.push(Point{coord.x, coord.y + 1});
