@@ -18,12 +18,12 @@ void run_main_test()
 
     // Testing Invalid format within the inputs
     cout<<"Test 1: "<<endl;
-    run_farm_with_input("48 192 351 207 48 392 351 407, 120 52 135 547, 260 52 275 547", 400, 600, "Invalid format of coodinates, 8 numbers found on a input... Excluding from the barren list.\n224128");
+    run_farm_with_input("48 192 351 207 48 392 351 407, 120 52 135 547, 260 52 275 547", 400, 600, "Invalid format of coodinates, 8 numbers found in a input... Excluding from the barren list.\n224128");
     cout<<endl;
 
     // Testing invalid coordinate only
     cout<<"Test 2: "<<endl;
-    run_farm_with_input("48 192 351 207 48", 400, 600, "Invalid format of coodinates, 5 numbers found on a input... Excluding from the barren list.\n240000");
+    run_farm_with_input("48 192 351 207 48", 400, 600, "Invalid format of coodinates, 5 numbers found in a input... Excluding from the barren list.\n240000");
     cout<<endl;
 
     // Small test case

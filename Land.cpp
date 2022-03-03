@@ -9,7 +9,7 @@ Land::Land(vector<int> coordinates)
     // Check if input coordinates have correct length (4 numbers)
     if(coordinates.size() != 4)
     {
-        cout<<"Invalid format of coodinates, " <<coordinates.size() << " numbers found on a input... Excluding from the barren list."<<endl;
+        cout<<"Invalid format of coodinates, " <<coordinates.size() << " numbers found in a input... Excluding from the barren list."<<endl;
         validLand = false; 
 
         return;
