@@ -29,7 +29,7 @@ int main(int argc, char* argv[]) {
     char h[] = "-h";
     char runTest[] = "-runtest";
 
-    int newWidth  = 400, newHeight = 600;
+    int newWidth = 400, newHeight = 600;
     bool customInputFlag = false;
 
     int index = 1;
@@ -72,9 +72,7 @@ int main(int argc, char* argv[]) {
     if (!farm.IsValid())
         return 0;
 
-    bool success = farm.SetBarrenAreas(barrenLandInputs);
-    if(!success)
-        return 0;
+    farm.SetBarrenAreas(barrenLandInputs);
 
     farm.DisplayFarm();
 
